@@ -10,7 +10,7 @@ class App extends Component {
   }
   
   handleLoading = () => {
-    console.log(this.props.loading)
+
     if(this.props.loading) {
       return <div>Loading...</div>
     } else {
