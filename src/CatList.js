@@ -1,12 +1,14 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 
 class CatList extends Component {
 
+    
     render(){
-        const cats = () => this.props.catPics.map(pic => <img href={pic.url}></img>)
-        return(
-        <div>HI{cats()}</div>
-        )
+        // this constant can be written as an arrow function and it doesn't have to be inside render then 
+       const cats = this.props.catPics.map(pic => <img src={pic.url} alt=""/>)
+       return (
+       <div>{cats}</div> 
+       )
     }
 }
 

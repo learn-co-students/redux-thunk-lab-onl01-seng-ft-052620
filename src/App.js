@@ -6,16 +6,22 @@ import CatList from './CatList'
 class App extends Component {   
 
   componentDidMount(){
-    console.log(this.props)
     this.props.fetchCats()
+  }
+
+  neverTooLateToRenderCats = () => {
+    if (this.props.catPics.length > 0) {
+      return < CatList catPics={this.props.catPics} />
+    } else {
+      return <div>Wait a second, fetching the cats!!!</div>
+    }
   }
   
   render() {
-    console.log(this.props.catPics)
     return (
       <div>
         <h1>CatBook</h1>
-        < CatList catPics={this.props.catPics} />
+        {this.neverTooLateToRenderCats()}
       </div>
     );
   }
